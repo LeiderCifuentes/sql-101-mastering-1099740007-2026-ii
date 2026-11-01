@@ -7,9 +7,12 @@ SELECT
     T1.last_name AS last_name,
     T1.phone_number AS phone,
     T1.membership_date AS membership_date
-FROM farm.farmers AS T1
-WHERE T1.municipality_code = '54518' AND T1.is_active= false
-ORDER BY T1.membership_date ;
+FROM 
+    farm.farmers AS T1
+WHERE 
+    T1.municipality_code = '54518' AND T1.is_active= false
+ORDER BY 
+    T1.membership_date ;
 
 /***
  document  |    first_name    |     last_name      |   phone    | membership_date
