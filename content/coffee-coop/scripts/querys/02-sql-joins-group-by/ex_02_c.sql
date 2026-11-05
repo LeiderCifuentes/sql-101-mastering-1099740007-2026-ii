@@ -5,10 +5,12 @@ SELECT
     T1.delivery_id AS delivery,
     T2.analysis_id AS analysis,
     T2.cup_score AS cup_score
-FROM buy.deliveries AS T1
+FROM 
+    buy.deliveries AS T1
 LEFT JOIN buy.quality_analyses AS T2
     ON T1.delivery_id = T2.delivery_id
-WHERE T1.delivery_id LIKE '%20260930%'
+WHERE 
+    T1.delivery_id LIKE '%20260930%'
 ORDER BY T1.delivery_id ASC;
 
 /***
