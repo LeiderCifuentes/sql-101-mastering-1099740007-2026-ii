@@ -5,13 +5,18 @@ SELECT
     T2.municipality_name AS municipality,
     COUNT(T1.document_number) AS farmers_count,
     ROUND(AVG(DATE_PART('year', AGE(DATE '2026-09-30', T1.birth_date)))::NUMERIC, 2) AS avg_age_years
-FROM farm.farmers AS T1
+FROM 
+    farm.farmers AS T1
 INNER JOIN geo.municipalities AS T2
     ON T1.municipality_code = T2.municipality_code
-WHERE T2.department_code = '54'
-GROUP BY T2.municipality_name
-HAVING ROUND(AVG(DATE_PART('year', AGE(DATE '2026-09-30', T1.birth_date)))::NUMERIC, 2) > 51
-ORDER BY T2.municipality_name ASC;
+WHERE 
+    T2.department_code = '54'
+GROUP BY 
+    T2.municipality_name
+HAVING 
+    ROUND(AVG(DATE_PART('year', AGE(DATE '2026-09-30', T1.birth_date)))::NUMERIC, 2) > 51
+ORDER BY 
+    T2.municipality_name ASC;
 
 /***
    municipality   | farmers_count | avg_age_years
