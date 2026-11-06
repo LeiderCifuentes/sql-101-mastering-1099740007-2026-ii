@@ -7,8 +7,10 @@ SELECT
     ROUND(AVG(T1.cup_score), 2) AS avg_cup_score,
     MIN(T1.moisture_pct) AS min_moisture_pct,
     MAX(T1.moisture_pct) AS max_moisture_pct
-FROM buy.quality_analyses AS T1
-WHERE T1.delivery_id LIKE 'DLV-20260930-%';
+FROM 
+    buy.quality_analyses AS T1
+WHERE 
+    T1.delivery_id LIKE 'DLV-20260930-%';
 
 /***
  min_cup_score | max_cup_score | avg_cup_score | min_moisture_pct | max_moisture_pct
